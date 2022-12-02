@@ -7,16 +7,16 @@ import (
 
 func main() {
 	/*
-		goto可以将代码跳到指定的位置执行，注意goto执行完成会接着走goto下面的代码。
-		所以这里相当于两条线在执行代码，一条是指定位置的代码会一直执行到没有代码为止，一条是goto下面的代码执行到没有代码为止
+		goto可以将代码跳到指定的位置执行，注意goto执行完成会接着走goto下面的代码,知道没有代码或退出为止。
 		goto一般会配合if使用
 	*/
 
 	goto label2
+	fmt.Println("what")
 
 label1:
 	fmt.Println("Hello Golang1, stop")
-	os.Exit(0)
+	os.Exit(0) // 不推出会无限循环执行
 label2:
 	fmt.Println("Hello Golang2, goto 5")
 	goto label5
